@@ -1,0 +1,40 @@
+.form-main-content{
+    padding: 40px;
+    transition: 0.5s;
+    background-color: whitesmoke;
+    /* height: 100%; */
+    overflow: auto;
+    /* position: absolute; */
+    /* top: 0; */
+    /* right: 0; */
+    margin: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.agent-data input, .agent-data textarea{
+    background-color: #f9fafb; /* bg-gray-50 */
+    border: 1px solid #d1d5db; /* border border-gray-300 */
+    color: #111827; /* text-gray-900 */
+    font-size: 0.875rem; /* text-sm */
+    padding: 0.5rem; /* Tambahkan padding jika diperlukan */
+    border-radius: 0.25rem;
+    margin-top: 5px;
+}
+
+.agent-data label, .social-data label{
+    font-size: 0.875rem; /* text-sm */
+    margin-top: 5px;
+}
+
+.layout-main-content{
+    transition: 0.5s;
+    margin-bottom: 20px;
+}
+
+footer{
+    margin: 0 40px;
+    transition: 0.5s;
+    padding-bottom: 20px;
+}

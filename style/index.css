@@ -1,0 +1,100 @@
+@import url("https://font.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900%display=swap");
+/* @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@1,500&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@1,500&family=Prompt:ital,wght@1,500&display=swap');
+body{
+  overflow-x: hidden;
+}
+.hero-container {
+    display: flex;
+    height: 650px;
+    padding: 0 10%;
+    background-color: #2F327D;
+  }
+  
+  .hero-container > div {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .hero-container h1 {
+    font-size: 50px;
+    width: 420px;
+    margin: 20px 0;
+    font-weight: bold;
+    font-family: 'Kanit', sans-serif;
+  }
+  
+  .hero-container p {
+    font-size: 30px;
+    color: var(--gray);
+  }
+  
+  .hero-container > img {
+    margin-top: 120px;
+    width: 74%;
+    height: 480px;
+    /* align-self: center; */
+    
+  }
+.description-container{
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* .description-agent > a {
+  width: 80%;
+  background-color: rgba(4, 171, 255, 1);
+} */
+
+.description-agent{
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 70px;
+}
+.description-agent .button-agent{
+  width: 60%;
+  background-color: rgba(4, 171, 255, 1);
+  color: white;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+.description-agent .button-agent:hover{
+  background-color: rgba(4, 171, 255, 0.8);
+}
+
+/* card */
+#card .option-card {
+  visibility: hidden;
+  transition: 0.3s ease-in;
+}
+#card .open-option{
+  cursor: pointer;
+}
+#card .option-card {
+  z-index: 10;
+  bottom: 40px; 
+  right: -190px;
+  width: 240px;
+}
+#card .option-card:hover{
+  visibility: visible;
+}
+#card .open-option:hover + .option-card {
+  visibility: visible;
+}
+#card .option-card a {
+  display: block;
+  padding:10px;
+  padding-left: 20px;
+  text-decoration: none;
+  color: rgb(68, 64, 64);
+}
+#card .option-card a:hover {
+  background-color: rgba(4, 171, 255, 1);
+  color: white;
+}

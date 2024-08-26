@@ -1,0 +1,4 @@
+# file inside node modules
+node_modules
+# file inside build
+.vscode

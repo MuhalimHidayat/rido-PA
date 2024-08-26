@@ -1,0 +1,63 @@
+.sidebar{
+    width: 20%;
+    background: rgba(29, 32, 38, 1);
+    transition: 0.5s;
+    padding: 20px 0;
+    /* position: absolute;
+    top: 0; 
+    left: 0; */
+    /* untuk height full layar, jadi bisa sampai di scroll */
+    /* height: fit-content; */
+
+}
+.logo{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 1.5em;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-item{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    color: rgb(155 163 177);
+}
+.sidebar-item img{
+    width: 20px;
+    height: 20px;
+}
+.sidebar-item p{
+    margin: 0;
+    font-size: 1em;
+    font-weight: 500;
+}
+.sidebar-item-color{
+    transition: 0.3s;
+}
+.sidebar-item-color:hover{
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.fokus{
+    color: white;
+    background: rgba(4, 171, 255, 1);
+}
+
+/* content */
+.content{
+    width: 80%;
+    background: white;
+    transition: 0.5s;
+}
+#upper-content{
+    background-color: whitesmoke;
+    padding: 10px 60px;
+}

@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(
+        to right, #52D3D8,
+        #3887BE,
+        #38419D,
+        #200E3A
+        /* to right, #84A7A1,
+        #2E8A99,
+        #1F6E8C,
+        #0E2954 */
+    );
+}
+
+.wadah {
+    margin: 50px;
+    background-color: #38419D ;
+    border: solid 1px black;
+    border-radius: 15px;
+    width: 80%;
+    height: 20%;
+    padding-bottom: 70px;
+}
+.ucapan {
+    text-align: center;
+    margin: 30px;
+    color: aliceblue;
+}
+
+.ucapan b {
+    color: #04ABFF;
+}
+.kiri {
+    width: 30% ;
+    height: 580px;
+    /* display: inline-block; */
+    background-color: aliceblue ;
+    font-weight: bold;
+    border-radius: 15px;
+}
+
+.judul {
+    text-align: center;
+}
+
+.keterangan{
+    padding-left: 20px;
+}
+
+.keterangan p {
+    font-size: medium;
+    text-align: left;
+}
+
+
+.kanan {
+    width: 30%;
+    height: 580px;
+    /* display: inline-block; */
+    background-color: aliceblue;
+    font-weight: bold;
+    border-radius: 15px;
+}
+
+.fitur{
+    display: flex;
+    /* gap: 10px; */
+}
+.tombol {
+    margin: 25px;
+    padding: 10px;
+    color: aliceblue;
+    border-radius: 10px;
+    background-color: #3887BE;
+}
+
+.tombol a {
+    text-decoration: none;
+    color: aliceblue;
+    font-weight: bold;
+}
+
+/* .tombol a{
+    color: red
+} */

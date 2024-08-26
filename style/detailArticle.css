@@ -1,0 +1,52 @@
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+.main-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* shadow */
+}
+.foto{
+    margin: 20px;
+}
+.foto img{
+    width: 100%;
+    max-height: 340px;
+    border-radius: 20px;
+    object-fit: cover;
+    object-position: center;
+}
+.artikel{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+
+}
+.penulis {
+    width: 90%;
+    border-top: 1px solid gray;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.related-blog{
+    width: 100%;
+    background-color: rgb(172, 210, 251);
+    padding-bottom: 30px;
+}
+
+.content-related-blog{
+    width: 90%;
+    margin: 0 auto;
+    
+}
+footer{
+    width: 100%;
+    height: 300px;
+    background-color: rgba(4, 171, 255, 1);
+}

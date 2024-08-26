@@ -1,0 +1,53 @@
+/* .navbar-top-content a{
+    padding: 1rem 0;
+}
+.navbar-top-content a:hover{
+    color: white;
+    border-top: 2px solid rgb(250, 171, 24);
+} */
+
+.focus{
+    color: white;
+    border-top: 2px solid rgb(250, 171, 24);
+}
+
+.navbar-bottom-content-img img{
+    height: 48px;
+    width: 48px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 100%
+}
+
+.navbar-bottom-button {
+    margin-right: 20px;
+    padding: 8px;
+    background-color: #0779E4;
+    border-radius: 10px;
+    align-items: center;
+}
+
+.tombol-navbar {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+/* not yet login */
+#adm-auth .registerAg{
+    background-color: rgba(255, 238, 232, 1);
+    color: rgba(4, 171, 255, 1);
+}
+#adm-auth .registerAg:hover{
+    background-color: rgba(255, 238, 232, 0.765);
+    color: rgba(4, 171, 255, 1);
+}   
+
+#adm-auth .loginAg{
+    background-color: rgba(4, 171, 255, 1);
+    color: white;
+}
+#adm-auth .loginAg:hover{
+    background-color: rgba(4, 171, 255, 0.765);
+    color: white;
+}

@@ -1,0 +1,83 @@
+@import url("https://font.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900%display=swap");
+/* @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@1,500&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@1,500&family=Prompt:ital,wght@1,500&display=swap');
+
+*{
+    /* margin: 0; */
+    /* padding: 0; */
+    /* box-sizing: border-box; */
+    font-family: 'Poppins', sans-serif;
+}
+
+/* body{
+    min-height: 100vh;
+    background-color:#f6f6f6;
+} */
+
+.header-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    padding-left: 100px;
+    background-color: #f6f6f6 ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 200;
+}
+
+/* bagian navbar */
+.navbar {
+    margin-right: 50px;
+    display: flex;
+    align-items: center;
+
+}
+
+.navbar a {
+    position: relative;
+    margin-right: 20px;
+    text-decoration: none;
+    font-weight: 550;
+    color:#0779E4;
+}
+
+.navbar ::before{
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background:#0779E4 ;
+    transition: .3s;
+}
+.navbar a:hover::before {
+    width: 100%;
+    
+    /* transition: 5ms; */
+}
+
+.navbar button {
+    margin-right: 20px;
+    padding: 8px;
+    background-color: #0779E4;
+    border-radius: 10px;
+    align-items: center;
+}
+
+.logo-navbar {
+    text-decoration: none;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 30px;
+    color: #2F327D;
+    font-family: 'Kanit', sans-serif;
+}
+
+.tombol-navbar {
+    padding-left: 20px;
+    padding-right: 0;
+}

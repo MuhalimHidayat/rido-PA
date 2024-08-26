@@ -1,0 +1,32 @@
+#gam_settings{
+    width: 228px;
+    height: 161px;
+    object-fit: cover;
+    
+}
+
+.form-artikel-paket{
+    display: flex;
+    flex-direction: column;
+}
+.form-artikel-paket > label{
+    font-size: 0.875rem; /* text-sm */
+    /* font-weight: 600; */
+    margin-top: 5px;
+}
+.form-artikel-paket > input, .form-artikel-paket > textarea{
+    /* bg-gray-50 border border-gray-300 text-gray-900 text-sm  */
+    background-color: #f9fafb; /* bg-gray-50 */
+    border: 1px solid #d1d5db; /* border border-gray-300 */
+    color: #111827; /* text-gray-900 */
+    font-size: 0.875rem; /* text-sm */
+    padding: 0.5rem; /* Tambahkan padding jika diperlukan */
+    border-radius: 0.25rem;
+    margin-top: 5px;
+}
+
+footer{
+    margin: 0 40px;
+    transition: 0.5s;
+    padding-bottom: 20px;
+}
