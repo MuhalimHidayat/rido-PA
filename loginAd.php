@@ -17,9 +17,9 @@ require 'functions/admin/login.php'
 </head>
 
 <body>
-    <!-- <header>
+    <header>
         <p class="text-2xl font-semibold" style="margin-left: 130px;">SmartSkills<span style="color: rgba(4, 171, 255, 1);"> Admin</span></p>
-    </header> -->
+    </header>
     <main>
         <div class="content flex flex-col justify-center items-center">
             <div class="judul-log">
