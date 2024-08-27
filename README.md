@@ -12,13 +12,23 @@ Aplikasi ini dibangun dengan menggunakan :
 - Tailwind
 
 ## Installation
-1. Arahkan path folder kedalam folder dan lakukan git clone : 
+1. Arahkan path folder kedalam folder dan lakukan git clone pada C:\xampp\htdocs> : 
 ```
-C:\xampp\htdocs > git clone https://github.com/MuhalimHidayat/rido-PA.git
+git clone https://github.com/MuhalimHidayat/rido-PA.git
 ```
 2. Start Apache dan MySQL pada XAMPP
 3. Import file database smartskills.sql pada localhost/phpmyadmin di browser
-4. 
+4. install paket npm di terminal pada C:\xampp\htdocs\rido-PA>
+```
+npm init
+```
+5. Jalankan projek di browser
+
+## admin username dan password
+```
+username = ridhoreja
+password = 12345678
+```
 
 
 
