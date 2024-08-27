@@ -1,4 +1,4 @@
-<?php 
+<?php
 require 'functions/authUsr/authSis.php';
 
 // cek apakah tombol submit sudah ditekan 
@@ -25,6 +25,7 @@ if (isset($_POST["submit"])) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,12 +35,12 @@ if (isset($_POST["submit"])) {
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+        href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap"
+        rel="stylesheet" />
     <!-- cdn tailwind -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
 </head>
+
 <body>
     <header>
 
@@ -61,37 +62,37 @@ if (isset($_POST["submit"])) {
                         </div>
                         <div class="inputer2">
                             <div class="nama">
-                                <label for="nama">username</label> 
+                                <label for="nama">username</label>
                                 <input type="text" placeholder="Masukan Username" name="username" required>
                             </div>
                             <div class="nohp">
-                                <label for="nohp">No HP</label> 
+                                <label for="nohp">No HP</label>
                                 <input type="text" name="nohp" placeholder="Masukan No Hp" name="no_hp" required>
                             </div>
                         </div>
                         <div class="inputer3">
                             <div class="email">
-                                <label for="email">Email</label> 
+                                <label for="email">Email</label>
                                 <input type="text" name="email" placeholder="Masukan Email " name="email" required>
                             </div>
                             <div class="tanggal">
-                                <label for="tanggal">Tanggal lahir</label> 
+                                <label for="tanggal">Tanggal lahir</label>
                                 <input type="date" placeholder="Masukan Tanggal Lahir" name="tanggal-lahir" required>
                             </div>
                         </div>
                         <div class="inputer4">
                             <div class="password">
-                                <label for="password">Password</label> 
-                                <input type="password" placeholder="Masukan Password" name="password" required>
+                                <label for="password">Password <span class="absolute ms-4 mt-1 text-xs font-light" id="keteranganPass"></span></label>
+                                <input type="password" placeholder="Masukan Password" name="password" id="password" required>
                             </div>
                             <div class="kon-pass">
-                                <label for="kon-pass">Konfirmasi Password</label> 
-                                <input type="password" placeholder="Konfirmasi Password" name="konf-password" required>
+                                <label for="kon-pass">Konfirmasi Password <span class="absolute ms-4 mt-1 text-xs font-light" id="keteranganKonf"></span></label>
+                                <input type="password" placeholder="Konfirmasi Password" name="konf-pass" id="konf-password" required>
                             </div>
                         </div>
                         <div class="kiri-bawah">
                             <div class="tombol">
-                                <button type="submit" name="submit" class="text-white font-bold">Sign Up</button>
+                                <button type="submit" name="submit" class="text-white font-bold" >Sign Up</button>
                             </div>
                             <div class="button-desk">
                                 <p>Already have account? <a href="loginSis.php">Login now</a></p>
@@ -99,7 +100,7 @@ if (isset($_POST["submit"])) {
                         </div>
                     </div>
                 </form>
-                
+
             </div>
             <div class="kanan">
                 <div class="gambar">
@@ -108,26 +109,7 @@ if (isset($_POST["submit"])) {
             </div>
         </div>
     </main>
-    <!-- <footer>
-        <div class="kiri-foot">
-            <h1><a href="">Smartskills</a></h1>
-        </div>
-        <div class="kanan-foot">
-            <div class="foot-text">
-                <p style="color: azure;"><b style="color: cornflowerblue;">Smartskills</b> 2024 copyright all rights reserved</p>
-            </div>
-            <div class="foot-sosmed">
-                <div class="insta">
-                    <img src="assets/instagram (1).svg" alt="instagram">
-                </div>
-                <div class="facebook">
-                    <img src="assets/facebook.svg" alt="twitter">
-                </div> 
-                <div class="linkedin">
-                    <img src="assets/linkedin--network-linkedin-professional.svg" alt="linkedin">
-                </div>
-            </div>
-        </div>
-    </footer> -->
+    <script src="script/validasiPassword.js"></script>
 </body>
+
 </html>

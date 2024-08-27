@@ -8,6 +8,7 @@ Aplikasi ini dibangun dengan menggunakan :
 - Google Chrome
 - HTML
 - CSS
+- Javascript
 - PHP 
 - Tailwind
 
@@ -24,7 +25,7 @@ npm init
 ```
 5. Jalankan projek di browser
 
-## admin username dan password
+## Admin username dan password
 ```
 username = ridhoreja
 password = 12345678
