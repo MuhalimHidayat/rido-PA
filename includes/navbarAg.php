@@ -72,25 +72,12 @@
                 <div class="flex flex-row items-center gap-5 py-4 px-5">
                     <p class="text-2xl font-semibold">Smartskills</p>
                     <!-- Search button -->
-                    <div class="flex ">
-                        <div class="relative">
-                            <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                                <svg class="w-5 h-5 text-gray-500 " aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
-                                </svg>
-                            </div>
-                            <input type="search" id="default-search"
-                                class="block w-full p-2 py-2 text-sm ps-10 text-gray-900 border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
-                                placeholder="What do you want learn..." required />
-                        </div>
-                    </div>
+                    
                 </div>
                 <div class="flex flex-row justify-center items-center gap-9">
-                    <a href="index.php">Home</a>
-                    <a href="">Informasi</a>
-                    <a href="">Agent</a>
+                    <a class="text-slate-900 hover:text-slate-700 font-semibold" href="index.php">Home</a>
+                    <a class="text-slate-900 hover:text-slate-700 font-semibold" href="viewInformations.php">Informasi</a>
+                    <a class="text-slate-900 hover:text-slate-700 font-semibold" href="">Agent</a>
                     <?php if(isset($_SESSION['id_siswa'])):?>
                         <?php
                         $id_siswa = $_SESSION['id_siswa'];
@@ -108,7 +95,7 @@
                             <img src="assets/fotoUploads/<?= $agent['foto'] ?>" alt="">
                         </div>
                     <?php else: ?>
-                        <button class="navbar-bottom-button"><a class="tombol-navbar" href="loginAg.php"
+                        <button class="navbar-bottom-button"><a class="tombol-navbar" href="kategoriuser.php"
                     style="color: #f9f9f9;">Join Us</a></button>
                     <?php endif;?>
                 </div>

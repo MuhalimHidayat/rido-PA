@@ -29,9 +29,6 @@ $siswa = query("SELECT * FROM siswa WHERE nama_siswa LIKE '%$keyword%' OR userna
             <th scope="col" class="px-6 py-3">
                 Instansi
             </th>
-            <th scope="col" class="px-6 py-3">
-                Action
-            </th>
         </tr>
     </thead>
     <tbody>
@@ -60,9 +57,6 @@ $siswa = query("SELECT * FROM siswa WHERE nama_siswa LIKE '%$keyword%' OR userna
                     <?= $value['instansi'] ?>
                 </td>
 
-                <td class="px-6 py-4">
-                    <a href="#" class="font-medium text-red-600 hover:text-red-500 hover:underline" onclick="return confirm('Menghapus Siswa?')">Hapus</a>
-                </td>
             </tr>
             <?php $i++; ?>
         <?php endforeach; ?>

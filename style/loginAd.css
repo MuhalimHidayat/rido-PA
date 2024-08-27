@@ -1,0 +1,153 @@
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Quicksand', sans-serif;
+}
+header{
+    margin: 20px;
+}
+
+.content{
+    display: flex;
+    
+}
+
+/* ini bagian kiri */
+.kiri{
+    /* float: left; */
+    padding-top: 80px;
+    /* background-color:darkgrey; */
+    width: 70%;
+    /* background-color: red; */
+}
+
+.judul p {
+    font-size: larger;
+    line-height: 1.5;
+}
+
+.judul b {
+    font-style: italic;
+    color: navy;
+}
+
+.inputan{
+    /* background-color: sandybrown; */
+    padding-top: 20px;
+    /* width: 100%; */
+    /* background-color: #25613e; */
+    
+}
+
+.inputan label{
+    /* padding-top: 40px; */
+    font-weight: bold;
+}
+
+.inputan input{
+    margin-top: 10px;
+    padding-left: 15px;
+}
+
+
+.inputan ::placeholder{
+    font-size: medium;
+}
+
+.inputer1, .inputer2, .inputer3, .inputer4 {
+    margin-top: 20px;
+}
+
+.inputer1 input{
+    height: 40px;
+    width: 100%;
+    border-radius: 7px;    
+    box-sizing: border-box;
+}
+
+.inputer2 , .inputer3, .inputer4{
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    width: 100%;
+    /* background-color: aquamarine; */
+}
+
+.nama input, .username input, .password input {
+    height: 40px;
+    width: 260px;
+    border-radius: 7px;
+    box-sizing: border-box;
+}
+
+.nohp input, .nik input, .kon-pass input ,.tanggal input{
+    height: 40px;
+    width: 280px;
+    box-sizing: border-box;
+    /* max-width: 405px; */
+    border-radius: 7px;
+}
+
+.kiri-bawah {
+    /* background-color: pink; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px;
+}
+
+
+.kiri-bawah button {
+    margin-top: 40px;
+    height: 50px;
+    width: 300px;
+    border-radius: 7px;
+    background-color: #6172F3;
+    
+}
+
+button {
+    font-size: medium;
+    font-weight: bold;
+    color: azure;
+}
+
+
+
+
+/* bagian login */
+.inputer-login{
+    display: flex;
+    flex-direction: column;
+}
+
+.username-log{
+    margin-top: 30px;
+}
+
+.password-log{
+    margin-top: 10px;
+}
+
+.username-log input, .password-log input {
+    height: 40px;
+    width: 580px;
+    border-radius: 7px;
+    
+}
+
+.judul-log p{
+    font-size: larger;
+    line-height: 1.5 ;
+    max-width: 600px;
+}
+
+.button-desk2{
+    padding-left: 120px;
+}
+
+.button-desk2 a{
+    text-decoration: none;
+    font-weight: bold;
+}

@@ -81,9 +81,7 @@ $agent = query("SELECT * FROM agent");
                                     <th scope="col" class="px-6 py-3">
                                         Instansi
                                     </th>
-                                    <th scope="col" class="px-6 py-3">
-                                        Action
-                                    </th>
+                                    
                                 </tr>
                             </thead>
                             <tbody>
@@ -113,9 +111,7 @@ $agent = query("SELECT * FROM agent");
                                             <?= $value['instansi'] ?>
                                         </td>
 
-                                        <td class="px-6 py-4">
-                                            <a href="#" class="font-medium text-red-600 hover:text-red-500 hover:underline" onclick="return confirm('Menghapus Agent?')">Hapus</a>
-                                        </td>
+                                        
                                     </tr>
                                     <?php $i++; ?>
                                 <?php endforeach; ?>
