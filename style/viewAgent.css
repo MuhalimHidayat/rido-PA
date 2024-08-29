@@ -29,7 +29,7 @@
     border-radius: 100%;
 }
 
-.main-content{
+.main-content {
     position: relative;
     top: -180px;
     width: 85%;
@@ -38,36 +38,77 @@
     background-color: white;
     /* shadow */
 }
-.main-content-left{
+
+.main-content-left {
     width: 35%;
 }
 
-.main-content-right{
+.main-content-right {
     width: 65%;
 }
-#card-content .card{
-    width: 48%;
+
+/* card */
+#card .option-card {
+    visibility: hidden;
+    transition: 0.3s ease-in;
 }
 
-footer{
+#card .open-option {
+    cursor: pointer;
+}
+
+#card .option-card {
+    z-index: 10;
+    bottom: 40px;
+    right: -190px;
+    width: 240px;
+}
+
+#card .option-card:hover {
+    visibility: visible;
+}
+
+#card .open-option:hover+.option-card {
+    visibility: visible;
+}
+
+#card .option-card a {
+    display: block;
+    padding: 10px;
+    padding-left: 20px;
+    text-decoration: none;
+    color: rgb(68, 64, 64);
+}
+
+#card .option-card a:hover {
+    background-color: rgba(4, 171, 255, 1);
+    color: white;
+}
+
+
+footer {
     height: 412px;
 }
-footer #footer-top{
+
+footer #footer-top {
     height: 80%;
     /* background-color: #f0f0f0; */
 }
-.medsos a{
+
+.medsos a {
     padding: 1rem;
     background-color: rgba(54, 59, 71, 0.4);
     transition: 0.3s;
 }
-.medsos a:hover{
+
+.medsos a:hover {
     background-color: rgba(22, 22, 22, 0.9);
 }
 
-.medsos .linkedin{
+.medsos .linkedin {
     background-color: rgba(4, 171, 255, 1);
 }
-.medsos .linkedin:hover{
+
+.medsos .linkedin:hover {
     background-color: rgba(4, 171, 255, 0.9);
 }

@@ -1,6 +1,7 @@
 <?php
 session_start();
 require __DIR__ . "/functions/function/selectData.php";
+include_once 'includes/judulArtikel.php';
 
 $id_agent = $_SESSION['id_agent'];
 if (!isset($id_agent)) {
@@ -9,6 +10,10 @@ if (!isset($id_agent)) {
 }
 
 $agent = query("SELECT * FROM agent WHERE id_agent = $id_agent")[0];
+$sosmed = query("SELECT * FROM sosmed WHERE id_agent = $id_agent")[0];
+$artikel = query("SELECT * FROM agent AS ar INNER JOIN artikel AS ag ON ar.id_agent=ag.id_agent
+                WHERE ar.id_agent = $id_agent LIMIT 4 ");
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,24 +45,24 @@ $agent = query("SELECT * FROM agent WHERE id_agent = $id_agent")[0];
             <div class="flex flex-row items-center gap-5 p-5">
                 <img class="img-profile" src="assets/fotoUploads/<?= $agent['foto'] ?>" alt="">
                 <div>
-                    <h1 class="text-4xl font-bold mb-3">Marlo</h1>
-                    <p class="text-slate-700 text-lg">Web Designer & Best-Selling Instructor</p>
+                    <h1 class="text-4xl font-bold mb-3"><?= $agent['nama_agent'] ?></h1>
+                    <p class="text-slate-700 text-lg"><?= $agent['title'] ?></p>
                 </div>
             </div>
             <div class="flex flex-row gap-3 p-5">
-                <a href="">
+                <a href="<?= ($sosmed['fb'] == '') ? "#" : $sosmed['fb'] ?>">
                     <img src="assets/icon/fbc.png" alt="" class="bg-gray-100 hover:bg-gray-50 p-4">
                 </a>
-                <a href="">
+                <a href="<?= ($sosmed['twitter'] == '') ? "#" : $sosmed['twitter'] ?>">
                     <img src="assets/icon/twc.png" alt="" class="bg-gray-100 hover:bg-gray-50 p-4">
                 </a>
-                <a href="">
+                <a href="<?= ($sosmed['ig'] == '') ? '#' : $sosmed['ig'] ?>">
                     <img src="assets/icon/igc.png" alt="" class="bg-gray-100 hover:bg-gray-50 p-4">
                 </a>
-                <a href="">
+                <a href="<?= ($sosmed['yt'] == '') ? "#" : $sosmed['yt'] ?>">
                     <img src="assets/icon/ytc.png" alt="" class="bg-gray-100 hover:bg-gray-50 p-4">
                 </a>
-                <a href="">
+                <a href="<?= ($sosmed['wa'] == '') ? "#" : $sosmed['wa'] ?>">
                     <img src="assets/icon/wac.png" alt="" class="bg-gray-100 hover:bg-gray-50 p-4">
                 </a>
             </div>
@@ -67,71 +72,45 @@ $agent = query("SELECT * FROM agent WHERE id_agent = $id_agent")[0];
         <div class="main-content flex flex-row">
             <div class="main-content-left border border-gray p-5" style="height: 420px;">
                 <p class="text-2xl text-slate-900 font-semibold my-3">About Me</p>
-                <p class="text-sm text-slate-700 my-1 text-justify">One day Vako had enough with the 9-to-5 grind, or more like 9-to-9 in his case, and quit his job, or more like got himself fired from his own startup.</p>
-                <p class="text-sm text-slate-700 my-1 text-justify">He decided to work on his dream: be his own boss, travel the world, only do the work he enjoyed, and make a lot more money in the process. No more begging for vacation days and living from paycheck to paycheck. After trying everything from e-commerce stores to professional poker his lucky break came when he started freelance design. Vako fell in love with the field that gives him the lifestyle of his dreams.</p>
-                <p class="text-sm text-slate-700 my-1 text-justify">Vako realizes that people who take courses on Udemy want to transform their lives. Today with his courses and mentoring Vako is helping thousands of people transform their lives, just like he did once.</p>
+                <p class="text-sm text-slate-700 my-1 text-justify"><?= $agent['biography'] ?></p>
             </div>
             <div class="main-content-right px-5">
                 <div class="mt-8 mb-4">
                     <span class="font-semibold text-lg px-8 pb-2 border-b-2 border-orange-500">Article</span>
                 </div>
-                <p class="text-3xl text-slate-900 font-semibold my-3">Marlo Article</p>
-                <div class="flex flex-row flex-wrap justify-between gap-5" id="card-content">
-                    <!-- card -->
-                    <div class="card">
-                        <div class="card-img">
-                            <img class="relative top-1" src="assets/fotoUploads/courseAg.png" alt="">
-                        </div>
-                        <div class="flex flex-col card-content">
-                            <div class="px-3 border-x border-t border-gray">
-                                <div class="mb-3 text-sm font-medium mt-3 p-1 bg-purple-200 text-purple-600 inline-block">Developments</div>
-                                <p class="mb-4 text-xl font-semibold">Machine Learning A-Z™: Hands-On Python & R In Data Science</p>
+                <p class="text-3xl text-slate-900 font-semibold my-3"><?= $agent['username'] ?>'s <span
+                        class="text-2xl">Article</span></p>
+                <div class="flex flex-row flex-wrap justify-around gap-5 mt-8" id="card-content">
+                    <?php foreach ($artikel as $art): ?>
+                        <div class="relative" id="card">
+                            <div class="rounded overflow-hidden shadow-lg" style="max-width: 300px">
+                                <img class="w-full" src="assets/fotoUploads/<?= $art['foto'] ?>"
+                                    alt="Sunset in the mountains">
+                                <div class="px-6 py-4">
+                                    <div class="px-1 py-1 bg-purple-100 inline-block text-xs font-medium text-purple-950">
+                                        <?= $art['kategori'] ?>
+                                    </div>
+                                    <div class="font-bold text-lg mb-4">
+                                        <?= limitText(40, $art['judul']) ?>
+                                    </div>
+                                    <div class="px-1 py-1 bg-purple-100 inline-block text-xs font-bold text-purple-900">
+                                        <?= $formatted_date = date('d F Y', strtotime($art['tgl_membuat'])) ?>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between items-center px-6 py-4 border-t border-gray-300 shadow-md">
+                                    <div class="font-bold text-md">
+                                        <?= $art['nama_agent'] ?>
+                                    </div>
+                                    <img class="open-option" src="assets/icon/DotsThree.png" alt="">
+                                    <div class="option-card absolute flex flex-col bg-white border shadow-md font-medium">
+                                        <a href="detailArticle.php?id_artikel=<?= $art['id_artikel'] ?>">View Details</a>
+                                        <!-- <a href="">Edit Course</a>
+                                    <a href="">Delete Course</a> -->
+                                    </div>
+                                </div>
                             </div>
-                            <p class="p-3 text-slate-600 font-semibold text-lg border border-gray">Marlo</p>
                         </div>
-                    </div>
-
-                    <!-- card -->
-                    <div class="card">
-                        <div class="card-img">
-                            <img class="relative top-1" src="assets/fotoUploads/courseAg.png" alt="">
-                        </div>
-                        <div class="flex flex-col card-content">
-                            <div class="px-3 border-x border-t border-gray">
-                                <div class="mb-3 text-sm font-medium mt-3 p-1 bg-purple-200 text-purple-600 inline-block">Developments</div>
-                                <p class="mb-4 text-xl font-semibold">Machine Learning A-Z™: Hands-On Python & R In Data Science</p>
-                            </div>
-                            <p class="p-3 text-slate-600 font-semibold text-lg border border-gray">Marlo</p>
-                        </div>
-                    </div>
-
-                    <!-- card -->
-                    <div class="card">
-                        <div class="card-img">
-                            <img class="relative top-1" src="assets/fotoUploads/courseAg.png" alt="">
-                        </div>
-                        <div class="flex flex-col card-content">
-                            <div class="px-3 border-x border-t border-gray">
-                                <div class="mb-3 text-sm font-medium mt-3 p-1 bg-purple-200 text-purple-600 inline-block">Developments</div>
-                                <p class="mb-4 text-xl font-semibold">Machine Learning A-Z™: Hands-On Python & R In Data Science</p>
-                            </div>
-                            <p class="p-3 text-slate-600 font-semibold text-lg border border-gray">Marlo</p>
-                        </div>
-                    </div>
-
-                    <!-- card -->
-                    <div class="card">
-                        <div class="card-img">
-                            <img class="relative top-1" src="assets/fotoUploads/courseAg.png" alt="">
-                        </div>
-                        <div class="flex flex-col card-content">
-                            <div class="px-3 border-x border-t border-gray">
-                                <div class="mb-3 text-sm font-medium mt-3 p-1 bg-purple-200 text-purple-600 inline-block">Developments</div>
-                                <p class="mb-4 text-xl font-semibold">Machine Learning A-Z™: Hands-On Python & R In Data Science</p>
-                            </div>
-                            <p class="p-3 text-slate-600 font-semibold text-lg border border-gray">Marlo</p>
-                        </div>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </div>

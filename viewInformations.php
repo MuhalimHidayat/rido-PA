@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once "functions/function/selectData.php";
 include_once "includes/judulArtikel.php";
 

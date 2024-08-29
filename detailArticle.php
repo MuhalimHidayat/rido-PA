@@ -12,7 +12,7 @@ $artikel = query("SELECT ag.id_agent, ag.nama_agent, ag.foto AS agent_foto, ar.i
 // exit;
 
 // $related_artikel = query("SELECT * FROM artikel WHERE kategori = '$artikel[kategori]' AND id_artikel != '$id_artikel' LIMIT 2");
-$related_artikel = query("SELECT ag.id_agent, ag.nama_agent, ag.foto AS agent_foto, ar.id_artikel, ar.judul, ar.kategori, ar.artikel, ar.tgl_membuat, ar.foto AS artikel_foto FROM agent AS ag CROSS JOIN artikel AS ar ON ar.id_agent = ag.id_agent WHERE id_artikel != '$id_artikel' LIMIT 2");
+$related_artikel = query("SELECT ag.id_agent, ag.nama_agent, ag.foto AS agent_foto, ar.id_artikel, ar.judul, ar.kategori, ar.artikel, ar.tgl_membuat, ar.foto AS artikel_foto FROM agent AS ag CROSS JOIN artikel AS ar ON ar.id_agent = ag.id_agent WHERE id_artikel != '$id_artikel' LIMIT 8");
 
 // var_dump($related_artikel);
 // exit;
@@ -59,12 +59,15 @@ $related_artikel = query("SELECT ag.id_agent, ag.nama_agent, ag.foto AS agent_fo
                 <p class="text-slate-900 text-justify"><?= $artikel['artikel2'] ?></p>
             </div>
 
-            <div class="penulis flex  gap-5 ">
-                <img src="assets/fotoUploads/<?= $artikel['agent_foto'] ?>" alt="" style="width: 50px; height: 50px; object-fit:cover;">
-                <div>
-                    <p class="text-sm text-slate-600"><i>writen by</i></p>
-                    <p><?= $artikel['nama_agent'] ?></p>
-                </div>
+            <div class="penulis  ">
+                <a href="viewAgent.php" class="flex  gap-5">
+
+                    <img src="assets/fotoUploads/<?= $artikel['agent_foto'] ?>" alt="" style="width: 50px; height: 50px; object-fit:cover;">
+                    <div>
+                        <p class="text-sm text-slate-600"><i>writen by</i></p>
+                        <p><?= $artikel['nama_agent'] ?></p>
+                    </div>
+                </a>
             </div>
 
         </div>
@@ -72,10 +75,10 @@ $related_artikel = query("SELECT ag.id_agent, ag.nama_agent, ag.foto AS agent_fo
         <div class="related-blog">
             <div class="content-related-blog">
                 <h3 class="my-5 text-2xl font-semibold">Related Blog</h3>
-                <div class="mt-5 flex flex-row gap-5 w-full">
+                <div class="mt-5 px-8 pb- flex flex-row gap-5 w-full"  >
                     <!-- card -->
                     <?php foreach ($related_artikel as $value): ?>
-                        <div class="card flex flex-col justify-center bg-white p-3 gap-5 rounded-xl">
+                        <div class="card flex flex-col justify-center bg-white p-3 gap-5 ">
                             <img class="p-4" src="assets/fotoUploads/<?= $value['artikel_foto'] ?>" alt="">
                             <h2 class="ms-3 text-lg font-semibold"><?= $value['judul'] ?></h2>
                             <div class="flex items-center ps-3 gap-3">
@@ -96,19 +99,7 @@ $related_artikel = query("SELECT ag.id_agent, ag.nama_agent, ag.foto AS agent_fo
                         </div>
                     <?php endforeach; ?>
 
-                    <!-- card -->
-                    <!-- <div class="card flex flex-col justify-center bg-white p-3 gap-5 rounded-xl">
-                        <img class="p-4" src="assets/fotoUploads/view1.png" alt="">
-                        <h2 class="ms-3 text-lg font-semibold">Class adds $30 million to its balance sheet for a Zoom-friendly edtech solution</h2>
-                        <div class="flex items-center ps-3 gap-3">
-                            <img class="rounded-full" src="assets/fotoUploads/penulisview.png" alt="" style="width: 40px; height: 40px;">
-                            <p>Lina</p>
-                        </div>
-                        <p class="ms-3 text-sm text-slate-700">Class, launched less than a year ago by Blackboard co-founder Michael Chasen, integrates exclusively...</p>
-
-                        <p class="mt-7 mb-3 ms-3 text-sm hover:text-slate-700 underline decoration-sky-500"><a href="">Read More</a></p>
-
-                    </div> -->
+                    
 
                 </div>
             </div>

@@ -1,3 +1,8 @@
+<?php
+session_start();
+require_once "functions/function/selectData.php";
+include_once "includes/judulArtikel.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,7 +31,7 @@
                     <h1 class="text-slate-900 text-5xl">Ayo bergabung menjadi Agent</h1>
                     <p class="text-slate-700">Agent Agent adalah individu yang berperan penting dalam menyebarluaskan informasi seputar Teknologi Informasi dan Komunikasi (TIK) kepada siswa.</p>
                 </div>
-                <a href="">
+                <a href="loginAg.php">
                     Mulai Menjadi Agent
                 </a>
             </div>

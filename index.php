@@ -10,7 +10,7 @@ if (isset($_SESSION["id_siswa"])) {
     $siswa = query("SELECT * FROM siswa WHERE id_siswa = '$id_siswa'")[0];
 }
 
-$artikel = query("SELECT * FROM artikel AS ar INNER JOIN agent AS ag ON ar.id_agent = ag.id_agent ORDER BY id_artikel DESC LIMIT 6");
+$artikel = query("SELECT * FROM agent AS ag INNER JOIN artikel AS ar ON ar.id_agent = ag.id_agent ORDER BY id_artikel DESC LIMIT 6");
 
 
 
@@ -23,7 +23,7 @@ $artikel = query("SELECT * FROM artikel AS ar INNER JOIN agent AS ag ON ar.id_ag
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- navbar style -->
-    <link rel="stylesheet" href="style/includes/navbar.css">
+    <link rel="stylesheet" href="style/includes/navbarAg.css">
     <!-- link style -->
     <link rel="stylesheet" href="style/index.css">
     <!-- footer style -->
@@ -33,7 +33,9 @@ $artikel = query("SELECT * FROM artikel AS ar INNER JOIN agent AS ag ON ar.id_ag
 </head>
 
 <body>
-    <?php include_once 'includes/navbar.php'; ?>
+    <?php //include_once "includes/headerAg.php" 
+    include_once "includes/navbarAg.php"
+        ?>
     <main class="mb-5">
         <section class="hero-container">
             <div>
@@ -51,8 +53,10 @@ $artikel = query("SELECT * FROM artikel AS ar INNER JOIN agent AS ag ON ar.id_ag
         <section class="description-container flex flex-row justify-around">
             <div class="w-1/3 flex flex-col justify-center gap-5">
                 <h2 class="text-xl font-semibold"> Konsultasi</h2>
-                <p class="text-sm">Yuk, jadwalkan konsultasi sekarang! Bersama-sama, kita akan membahas potensi, tantangan,
-                    dan rencana masa depan. mari buat langkah pertama menuju perubahan positif. Saya siap membantu Anda mencapai tujuan. Ayo mulai konsultasi sekarang!</p>
+                <p class="text-sm">Yuk, jadwalkan konsultasi sekarang! Bersama-sama, kita akan membahas potensi,
+                    tantangan,
+                    dan rencana masa depan. mari buat langkah pertama menuju perubahan positif. Saya siap membantu Anda
+                    mencapai tujuan. Ayo mulai konsultasi sekarang!</p>
             </div>
             <div class="">
                 <img src="assets/desc.png" alt="desc">
@@ -63,18 +67,22 @@ $artikel = query("SELECT * FROM artikel AS ar INNER JOIN agent AS ag ON ar.id_ag
             <div class="flex justify-center text-2xl font-semibold my-5" id="Informasi">
                 <h2>Informasi</h2>
             </div>
-            <div class="flex justify-center items-center flex-wrap gap-5" style="width: 80%; margin: 0 auto;" id="card-content">
+            <div class="flex justify-center items-center flex-wrap gap-5" style="width: 80%; margin: 0 auto;"
+                id="card-content">
 
-                <?php foreach ($artikel as $art) : ?>
+                <?php foreach ($artikel as $art): ?>
                     <!-- card -->
                     <div class="relative" id="card">
                         <div class="rounded overflow-hidden shadow-lg" style="max-width: 300px">
-                            <img class="w-full" src="assets/fotoUploads/card.png" alt="Sunset in the mountains">
+                            <img class="w-full" src="assets/fotoUploads/<?=$art['foto']?>" alt="Sunset in the mountains">
                             <div class="px-6 py-4">
-                                <div class="px-1 py-1 bg-purple-100 inline-block text-xs font-medium text-purple-950"><?= $art['kategori'] ?></div>
+                                <div class="px-1 py-1 bg-purple-100 inline-block text-xs font-medium text-purple-950">
+                                    <?= $art['kategori'] ?></div>
                                 <div class="font-bold text-lg mb-4">
-                                    <?=limitText(40,$art['judul']) ?></div>
-                                <div class="px-1 py-1 bg-purple-100 inline-block text-xs font-bold text-purple-900"><?= $formatted_date = date('d F Y', strtotime($art['tgl_membuat'])) ?></div>
+                                    <?= limitText(40, $art['judul']) ?>
+                                </div>
+                                <div class="px-1 py-1 bg-purple-100 inline-block text-xs font-bold text-purple-900">
+                                    <?= $formatted_date = date('d F Y', strtotime($art['tgl_membuat'])) ?></div>
                             </div>
                             <div class="flex justify-between items-center px-6 py-4 border-t border-gray-300 shadow-md">
                                 <div class="font-bold text-md">
@@ -101,10 +109,11 @@ $artikel = query("SELECT * FROM artikel AS ar INNER JOIN agent AS ag ON ar.id_ag
         <section class="description-agent flex flex-row justify-around">
             <div class="w-1/3 flex flex-col justify-center gap-5">
                 <h2 class="text-xl font-semibold"> Apa Itu Agent? </h2>
-                <p class="text-sm">Tingkatkan performa dan keberhasilan tim bersama! Ayo bergabung menjadi agent untuk terlibat dalam sesi kolaboratif yang akan memperkuat keterampilan dan memunculkan inovasi.</p>
+                <p class="text-sm">Tingkatkan performa dan keberhasilan tim bersama! Ayo bergabung menjadi agent untuk
+                    terlibat dalam sesi kolaboratif yang akan memperkuat keterampilan dan memunculkan inovasi.</p>
 
                 <a href="kategoriuser.php" class="button-agent">
-                    Mulai Menjadi Agent
+                    Mulai Menjadi agent
                 </a>
             </div>
             <div class="">

@@ -43,7 +43,7 @@ if (isset($_POST["submit"])) {
     <title>Document</title>
     <link rel="stylesheet" href="style/profileSis.css">
     <!-- style navbar -->
-    <link rel="stylesheet" href="style/includes/navbar.css">
+    <link rel="stylesheet" href="style/includes/navbarAg.css">
     <!-- style footer -->
     <link rel="stylesheet" href="style/includes/footer.css">
     <!-- tailwind cdn -->
@@ -51,9 +51,10 @@ if (isset($_POST["submit"])) {
     </script>
 </head>
 
-<body><?php
-include_once 'includes/navbar.php';
-    ?>
+<body>
+    <?php //include_once "includes/headerAg.php" 
+    include_once "includes/navbarAg.php"
+        ?>
     <main class="mb-5">
         <div class="content">
             <div class="jumbutron">
@@ -73,7 +74,8 @@ include_once 'includes/navbar.php';
                         </div>
                         <div class="asal">
                             <p class="text-xl font-semibold">
-                                <?= $formatted_date = date('d F Y', strtotime($siswa['tanggal_lahir'])) ?></p>
+                                <?= $formatted_date = date('d F Y', strtotime($siswa['tanggal_lahir'])) ?>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -116,8 +118,7 @@ include_once 'includes/navbar.php';
                             <label for="avatar"
                                 class=" text-white font-semibold text-sm rounded-lg px-5 py-2 cursor-pointer">Pilih
                                 Foto</label>
-                            <input class="hidden" type="file" id="avatar" name="foto"
-                                accept="image/png, image/jpeg">
+                            <input class="hidden" type="file" id="avatar" name="foto" accept="image/png, image/jpeg">
                             <input type="hidden" name="foto_lama" value="<?= $siswa['foto'] ?>">
                         </div>
                     </div>
@@ -156,7 +157,8 @@ include_once 'includes/navbar.php';
                         </div>
                         <div class="kiri-bawah">
                             <div class="tombol">
-                                <button type="submit" name="submit" class="text-white font-bold px-8" style="background-color: #272a40;">Simpan
+                                <button type="submit" name="submit" class="text-white font-bold px-8"
+                                    style="background-color: #272a40;">Simpan
                                     Perubahan</button>
                             </div>
                         </div>

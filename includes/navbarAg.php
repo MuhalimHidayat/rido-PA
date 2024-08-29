@@ -1,6 +1,7 @@
 <?php 
 // var_dump($id_agent);
 // exit;
+// session_start();
 ?>
 <header>
     <div id="navbar">
@@ -78,21 +79,25 @@
                     <a class="text-slate-900 hover:text-slate-700 font-semibold" href="index.php">Home</a>
                     <a class="text-slate-900 hover:text-slate-700 font-semibold" href="viewInformations.php">Informasi</a>
                     <a class="text-slate-900 hover:text-slate-700 font-semibold" href="">Agent</a>
-                    <?php if(isset($_SESSION['id_siswa'])):?>
-                        <?php
-                        $id_siswa = $_SESSION['id_siswa'];
-                        $siswa = query("SELECT * FROM siswa WHERE id_siswa = $id_siswa")[0];    
-                        ?>
-                        <div class="navbar-bottom-content-img me-5">
-                            <img src="assets/fotoUploads/<?= $siswa['foto'] ?>" alt="">
-                        </div>
-                    <?php elseif (isset($_SESSION['id_agent'])):?>
+                    <?php if (isset($_SESSION['id_agent'])):?>
                         <?php 
                         $id_agent = $_SESSION['id_agent'];
                         $agent = query("SELECT * FROM agent WHERE id_agent = $id_agent")[0];    
                         ?>
-                        <div class="navbar-bottom-content-img me-5">
-                            <img src="assets/fotoUploads/<?= $agent['foto'] ?>" alt="">
+                        <div class="navbar-bottom-content-img me-8 my-3">
+                            <a href="viewAgent.php">
+                                <img src="assets/fotoUploads/<?= $agent['foto'] ?>" alt="">
+                            </a>
+                        </div>
+                    <?php elseif(isset($_SESSION['id_siswa'])):?>
+                        <?php
+                        $id_siswa = $_SESSION['id_siswa'];
+                        $siswa = query("SELECT * FROM siswa WHERE id_siswa = $id_siswa")[0];    
+                        ?>
+                        <div class="navbar-bottom-content-img me-8 my-3">
+                            <a href="profileSis.php">
+                                <img src="assets/fotoUploads/<?= $siswa['foto'] ?>" alt="">
+                            </a>
                         </div>
                     <?php else: ?>
                         <button class="navbar-bottom-button"><a class="tombol-navbar" href="kategoriuser.php"

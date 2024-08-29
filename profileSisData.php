@@ -46,7 +46,7 @@ if (isset($_POST['submit'])) {
     <title>Document</title>
     <link rel="stylesheet" href="style/profileSis.css">
     <!-- style navbar -->
-    <link rel="stylesheet" href="style/includes/navbar.css">
+    <link rel="stylesheet" href="style/includes/navbarAg.css">
     <!-- style footer -->
     <link rel="stylesheet" href="style/includes/footer.css">
     <!-- tailwind cdn -->
@@ -55,7 +55,7 @@ if (isset($_POST['submit'])) {
 </head>
 
 <body>
-    <?php include_once 'includes/navbar.php'; ?>
+    <?php include_once 'includes/navbarAg.php'; ?>
     <main class="mb-5">
         <div class="content">
             <div class="jumbutron">
