@@ -78,7 +78,7 @@
                 <div class="flex flex-row justify-center items-center gap-9">
                     <a class="text-slate-900 hover:text-slate-700 font-semibold" href="index.php">Home</a>
                     <a class="text-slate-900 hover:text-slate-700 font-semibold" href="viewInformations.php">Informasi</a>
-                    <a class="text-slate-900 hover:text-slate-700 font-semibold" href="">Agent</a>
+                    <a class="text-slate-900 hover:text-slate-700 font-semibold" href="becomeAgent.php">Agent</a>
                     <?php if (isset($_SESSION['id_agent'])):?>
                         <?php 
                         $id_agent = $_SESSION['id_agent'];
