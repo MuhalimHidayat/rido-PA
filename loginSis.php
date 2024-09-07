@@ -7,16 +7,59 @@ if (isset($_POST["submit"])) {
     $result = loginSis($_POST);
     if ($result) {
         echo "
+            <script src='https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries'></script>
+            <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
             <script>
-                alert('Login Berhasil!');
-                document.location.href = 'index.php';
+                document.addEventListener('DOMContentLoaded', function() {
+                    const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 2000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.onmouseenter = Swal.stopTimer;
+                        toast.onmouseleave = Swal.resumeTimer;
+                    }
+                    });
+                    Toast.fire({
+                    icon: 'success',
+                    title: 'Login Berhasil'
+                    });    
+
+                    setTimeout(() => {
+                        window.location.href = 'index.php';
+                    }, 2000);
+                    
+                });
             </script>
         ";
     } else {
         echo "
+            <script src='https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries'></script>
+            <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
             <script>
-                alert('Login Gagal!');
-                document.location.href = 'loginSis.php';
+                document.addEventListener('DOMContentLoaded', function() {
+                    const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 2000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.onmouseenter = Swal.stopTimer;
+                        toast.onmouseleave = Swal.resumeTimer;
+                    }
+                    });
+                    Toast.fire({
+                    icon: 'error',
+                    title: 'Login Gagal'
+                    });    
+                });
+
+                setTimeout(() => {
+                    window.location.href = 'loginSis.php';
+                }, 2000);
             </script>
         ";
     }
@@ -43,6 +86,8 @@ if(isset($_SESSION["id_siswa"])){
       rel="stylesheet"
     />
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <!-- cdn tailwind -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
 </head>
@@ -54,8 +99,8 @@ if(isset($_SESSION["id_siswa"])){
         <div class="content">
             <div class="kiri">
                 <div class="judul-log" style="margin-left: 130px;">
-                    <h1 class="text-4xl font-semibold mb-4">Login</h1>
-                    <p class="deskripsi text-xs">
+                    <h1 class="text-4xl font-semibold mb-4" onclick="Toast('error','error')">Login</h1>
+                    <p class="deskripsi text-xs" onclick="showAlert()">
                         Silahkan masukan email dan password anda untuk masuk ke akun anda
                     </p>
                 </div>
@@ -89,5 +134,18 @@ if(isset($_SESSION["id_siswa"])){
             </div>
         </div>
     </main>
+
+    <script>
+        function showAlert() {
+            Swal.fire({
+                title: 'Informasi',
+                text: 'Silahkan masukan email dan password anda untuk masuk ke akun anda',
+                icon: 'info',
+                confirmButtonText: 'Oke'
+            })
+        }
+    </script>
+
+    
 </body>
 </html>

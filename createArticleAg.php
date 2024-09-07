@@ -25,29 +25,113 @@ if (strpos($page_location, $file_name) !== false) {
 
 if (isset($_POST['submit'])) {
     if (isset($_GET['id_artikel'])) {
-        // require __DIR__ . '/functions/article/delete.php';
-        // var_dump($_FILES);
         if (updateArticle($_POST, $_GET['id_artikel']) > 0) {
-            echo "<script>
-                alert('Artikel berhasil diupdate!');
-                document.location.href = 'myArticleAg.php';
+            echo "
+            <script src='https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries'></script>
+            <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 2000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.onmouseenter = Swal.stopTimer;
+                        toast.onmouseleave = Swal.resumeTimer;
+                    }
+                    });
+                    Toast.fire({
+                    icon: 'success',
+                    title: 'Artikel berhasil diupdate!'
+                    });    
+
+                    setTimeout(() => {
+                        window.location.href = 'myArticleAg.php';
+                    }, 2000);
+                    
+                });
             </script>";
         } else {
-            echo "<script>
-                alert('Artikel gagal diupdate!');
+            echo "
+            <script src='https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries'></script>
+            <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 2000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.onmouseenter = Swal.stopTimer;
+                        toast.onmouseleave = Swal.resumeTimer;
+                    }
+                    });
+                    Toast.fire({
+                    icon: 'error',
+                    title: 'Artikel gagal diupdate!'
+                    });    
+                    
+                });
             </script>";
         }
 
     } else {
         if (createArticle($_POST) > 0) {
-            echo "<script>
-                    alert('Artikel berhasil diupload!');
-                    document.location.href = 'myArticleAg.php';
-                </script>";
+            echo "
+            <script src='https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries'></script>
+            <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 2000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.onmouseenter = Swal.stopTimer;
+                        toast.onmouseleave = Swal.resumeTimer;
+                    }
+                    });
+                    Toast.fire({
+                    icon: 'success',
+                    title: 'Artikel berhasil diupload!'
+                    });    
+
+                    setTimeout(() => {
+                        window.location.href = 'myArticleAg.php';
+                    }, 2000);
+                    
+                });
+            </script>";
         } else {
-            echo "<script>
-                    alert('Artikel gagal diupload!');
-                </script>";
+            echo "
+            <script src='https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries'></script>
+            <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 2000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.onmouseenter = Swal.stopTimer;
+                        toast.onmouseleave = Swal.resumeTimer;
+                    }
+                    });
+                    Toast.fire({
+                    icon: 'error',
+                    title: 'Artikel gagal diupdate!'
+                    });    
+                    
+                });
+            </script>";
         }
     }
     
@@ -75,8 +159,8 @@ if (isset($_GET['id_artikel'])) {
 </head>
 
 <body>
-    <div class="container w-100">
-        <div class="flex w-100">
+    <div class="w-full">
+        <div class="flex w-full">
             <!-- sidebar -->
             <?php include 'includes/sidebarAg.php'; ?>
             <!-- endsidebar -->

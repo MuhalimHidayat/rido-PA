@@ -30,6 +30,9 @@ $artikel = query("SELECT * FROM agent AS ag INNER JOIN artikel AS ar ON ar.id_ag
     <link rel="stylesheet" href="style/includes/footer.css">
     <!-- tailwind -->
     <link rel="stylesheet" href="style/dist/ouput.css">
+
+    <!-- sweetalert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>

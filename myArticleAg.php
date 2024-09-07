@@ -98,7 +98,7 @@ if (strpos($page_location, $file_name) !== false) {
                                             <div class="px-1 py-1 bg-purple-100 inline-block text-xs font-medium text-purple-950"><?= strtoupper($value['kategori']) ?></div>
                                             <div class="font-bold text-lg mb-4"><?php
                                                                                 $artikel_judul = $value['judul'];
-                                                                                $maxLength = 50;
+                                                                                $maxLength = 40;
                                                                                 if (strlen($artikel_judul) > $maxLength) {
                                                                                     $artikel_judul = substr($artikel_judul, 0, $maxLength) . '...';
                                                                                 }
@@ -125,7 +125,7 @@ if (strpos($page_location, $file_name) !== false) {
                         </div>
                     </div>
                 </div>
-                <footer class="pt-3 mt-8 absolute bottom-0">
+                <footer class="pt-3 mt-8 relative bottom-0 ">
                     <p class="text-sm text-slate-600">&copy;2024- Designed by <b>SmartSkills.</b> All rights reserved.</p>
                 </footer>
             </div>

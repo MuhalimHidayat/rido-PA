@@ -15,16 +15,59 @@ if (isset($_POST["submit"])) {
     $result = loginAg($_POST);
     if ($result) {
         echo "
+            <script src='https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries'></script>
+            <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
             <script>
-                alert('Login Berhasil!');
-                document.location.href = 'settingAg.php';
+                document.addEventListener('DOMContentLoaded', function() {
+                    const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 2000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.onmouseenter = Swal.stopTimer;
+                        toast.onmouseleave = Swal.resumeTimer;
+                    }
+                    });
+                    Toast.fire({
+                    icon: 'success',
+                    title: 'Login Berhasil'
+                    });    
+
+                    setTimeout(() => {
+                        window.location.href = 'settingAg.php';
+                    }, 2000);
+                    
+                });
             </script>
         ";
     } else {
         echo "
+            <script src='https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries'></script>
+            <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
             <script>
-                alert('Login Gagal!');
-                document.location.href = 'loginAg.php';
+                document.addEventListener('DOMContentLoaded', function() {
+                    const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 2000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.onmouseenter = Swal.stopTimer;
+                        toast.onmouseleave = Swal.resumeTimer;
+                    }
+                    });
+                    Toast.fire({
+                    icon: 'error',
+                    title: 'Login Gagal'
+                    });    
+                });
+
+                setTimeout(() => {
+                    window.location.href = 'loginSis.php';
+                }, 2000);
             </script>
         ";
     }

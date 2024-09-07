@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1", 
+    "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "postcss style/dist/main.css -o style/dist/ouput.css --watch"
   },
   "keywords": [],
@@ -14,5 +14,9 @@
     "autoprefixer": "^10.4.20",
     "postcss-cli": "^11.0.0",
     "tailwindcss": "^3.4.10"
+  },
+  "type": "module",
+  "dependencies": {
+    "sweetalert2": "^11.12.4"
   }
 }

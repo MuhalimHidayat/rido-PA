@@ -12,23 +12,80 @@ $siswa = query("SELECT * FROM siswa WHERE id_siswa = '$id_siswa'")[0];
 if (isset($_POST["submit"])) {
     if (profileSis($_POST) > 0) {
         echo "
+            <script src='https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries'></script>
+            <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
             <script>
-                alert('Data berhasil diubah!');
-                document.location.href = 'profileSis.php';
+                document.addEventListener('DOMContentLoaded', function() {
+                    const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 2000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.onmouseenter = Swal.stopTimer;
+                        toast.onmouseleave = Swal.resumeTimer;
+                    }
+                    });
+                    Toast.fire({
+                    icon: 'success',
+                    title: 'Data berhasil diubah!'
+                    });    
+
+                    setTimeout(() => {
+                        window.location.href = 'profileSis.php';
+                    }, 2000);
+                    
+                });
             </script>
         ";
     } elseif (profileSis($_POST) == 0) {
         echo "
+            <script src='https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries'></script>
+            <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
             <script>
-                alert('Data tidak diubah!');
-                document.location.href = 'profileSis.php';
+                document.addEventListener('DOMContentLoaded', function() {
+                    const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 2000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.onmouseenter = Swal.stopTimer;
+                        toast.onmouseleave = Swal.resumeTimer;
+                    }
+                    });
+                    Toast.fire({
+                    icon: 'info',
+                    title: 'Data tidak diubah!'
+                    });    
+                });
             </script>
         ";
     } else {
         echo "
+            <script src='https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries'></script>
+            <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
             <script>
-                alert('Data gagal diubah!');
-                document.location.href = 'profileSis.php';
+                document.addEventListener('DOMContentLoaded', function() {
+                    const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 2000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.onmouseenter = Swal.stopTimer;
+                        toast.onmouseleave = Swal.resumeTimer;
+                    }
+                    });
+                    Toast.fire({
+                    icon: 'error',
+                    title: 'Data gagal diubah!'
+                    });    
+                    
+                });
             </script>
         ";
     }
