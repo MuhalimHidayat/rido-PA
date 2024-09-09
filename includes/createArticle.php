@@ -24,15 +24,15 @@
 <div class="flex flex-col gap-3">
     <div class="form-artikel-paket">
         <label for="judul">Judul </label>
-        <input class="bg-gray-50 border border-gray-300 text-gray-900 text-sm " type="text" name="judul" placeholder="Judul Artikel">
+        <input class="bg-gray-50 border border-gray-300 text-gray-900 text-sm " type="text" name="judul" placeholder="Judul Artikel" required>
     </div>
     <div class="form-artikel-paket">
         <label for="kategori">Kategori</label>
-        <input type="text" name="kategori" placeholder="Kategori artikel. Contoh: Figma">
+        <input type="text" name="kategori" placeholder="Kategori artikel. Contoh: Figma" required>
     </div>
     <div class="form-artikel-paket">
         <label for="artikel">Artikel</label>
-        <textarea name="artikel" id="artikel" cols="30" rows="10" placeholder="Tulis artikelmu disini"></textarea>
+        <textarea name="artikel" id="artikel" cols="30" rows="10" placeholder="Tulis artikelmu disini" required></textarea>
     </div>
 </div>
 <!-- (optional) form Heading-1 Artikel-1 Heading-2 Artikel-2 -->
