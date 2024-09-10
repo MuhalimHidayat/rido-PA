@@ -3,16 +3,14 @@ session_start();
 require __DIR__ . "/functions/function/selectData.php";
 include_once 'includes/judulArtikel.php';
 
-$id_agent = $_SESSION['id_agent'];
-if (!isset($id_agent)) {
-    header('Location: loginAg.php');
-    exit;
-}
+$id_agentt = $_GET['id_agent'];
 
-$agent = query("SELECT * FROM agent WHERE id_agent = $id_agent")[0];
-$sosmed = query("SELECT * FROM sosmed WHERE id_agent = $id_agent")[0];
+
+$agentt = query("SELECT * FROM agent WHERE id_agent = $id_agentt")[0];
+$sosmed = query("SELECT * FROM sosmed WHERE id_agent = $id_agentt")[0];
 $artikel = query("SELECT * FROM agent AS ar INNER JOIN artikel AS ag ON ar.id_agent=ag.id_agent
-                WHERE ar.id_agent = $id_agent LIMIT 4 ");
+                WHERE ar.id_agent = $id_agentt LIMIT 4 ");
+
 
 ?>
 <!DOCTYPE html>
@@ -43,10 +41,10 @@ $artikel = query("SELECT * FROM agent AS ar INNER JOIN artikel AS ag ON ar.id_ag
         <div class="header-content">
 
             <div class="flex flex-row items-center gap-5 p-5">
-                <img class="img-profile" src="assets/fotoUploads/<?= $agent['foto'] ?>" alt="">
+                <img class="img-profile" src="assets/fotoUploads/<?= $agentt['foto'] ?>" alt="">
                 <div>
-                    <h1 class="text-4xl font-bold mb-3"><?= $agent['nama_agent'] ?></h1>
-                    <p class="text-slate-700 text-lg"><?= $agent['title'] ?></p>
+                    <h1 class="text-4xl font-bold mb-3"><?=($agentt['nama_agent'] == " ") ? $agentt['username'] : $agentt['nama_agent'] ?> </h1>
+                    <p class="text-slate-700 text-lg"><?= $agentt['title'] ?></p>
                 </div>
             </div>
             <div class="flex flex-row gap-3 p-5">
@@ -72,13 +70,13 @@ $artikel = query("SELECT * FROM agent AS ar INNER JOIN artikel AS ag ON ar.id_ag
         <div class="main-content flex flex-row">
             <div class="main-content-left border border-gray p-5" style="height: 420px;">
                 <p class="text-2xl text-slate-900 font-semibold my-3">About Me</p>
-                <p class="text-sm text-slate-700 my-1 text-justify"><?= $agent['biography'] ?></p>
+                <p class="text-sm text-slate-700 my-1 text-justify"><?= $agentt['biography'] ?></p>
             </div>
             <div class="main-content-right px-5">
                 <div class="mt-8 mb-4">
                     <span class="font-semibold text-lg px-8 pb-2 border-b-2 border-orange-500">Article</span>
                 </div>
-                <p class="text-3xl text-slate-900 font-semibold my-3"><?= $agent['username'] ?>'s <span
+                <p class="text-3xl text-slate-900 font-semibold my-3"><?= $agentt['username'] ?>'s <span
                         class="text-2xl">Article</span></p>
                 <div class="flex flex-row flex-wrap justify-around gap-5 mt-8" id="card-content">
                     <?php foreach ($artikel as $art): ?>
