@@ -316,7 +316,7 @@ if (strpos($page_location, $file_name) !== false) {
                         <!-- tombol simpan perubahan name="account-save"-->
                         <div class="mt-3">
                             <button type="submit" name="account-save"
-                                class="bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm px-4 py-2 text-white dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Simpan
+                                class="bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm px-4 py-2 text-white">Simpan
                                 Perubahan</button>
                         </div>
                     </div>
@@ -335,7 +335,7 @@ if (strpos($page_location, $file_name) !== false) {
                                 </div>
 
                                 <input type="text" id="personal-website"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full ps-16 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full ps-16 p-2.5 "
                                     placeholder="Personal website or portofolio url..." name="personal-website"
                                     value="<?= isset($agentSosmed['personal_web']) ? $agentSosmed['personal_web'] : '' ?>" />
                             </div>
@@ -353,7 +353,7 @@ if (strpos($page_location, $file_name) !== false) {
                                     </div>
 
                                     <input type="text" id="fb"
-                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full ps-16 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full ps-16 p-2.5 "
                                         placeholder="Username" name="fb"
                                         value="<?= isset($agentSosmed['fb']) ? $agentSosmed['fb'] : '' ?>" />
                                 </div>
@@ -368,7 +368,7 @@ if (strpos($page_location, $file_name) !== false) {
                                     </div>
 
                                     <input type="text" id="ig"
-                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full ps-16 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full ps-16 p-2.5  "
                                         placeholder="Username" name="ig"
                                         value="<?= isset($agentSosmed['ig']) ? $agentSosmed['ig'] : '' ?>" />
                                 </div>
@@ -383,7 +383,7 @@ if (strpos($page_location, $file_name) !== false) {
                                     </div>
 
                                     <input type="text" id="linkedin"
-                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full ps-16 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full ps-16 p-2.5 "
                                         placeholder="Username" name="linkedin"
                                         value="<?= isset($agentSosmed['linkedin']) ? $agentSosmed['linkedin'] : '' ?>" />
                                 </div>
@@ -402,7 +402,7 @@ if (strpos($page_location, $file_name) !== false) {
                                     </div>
 
                                     <input type="text" id="twitter"
-                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full ps-16 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full ps-16 p-2.5 "
                                         placeholder="Username" name="twitter"
                                         value="<?= isset($agentSosmed['twitter']) ? $agentSosmed['twitter'] : '' ?>" />
                                 </div>
@@ -417,7 +417,7 @@ if (strpos($page_location, $file_name) !== false) {
                                     </div>
 
                                     <input type="text" id="wa"
-                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full ps-16 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full ps-16 p-2.5 "
                                         placeholder="Phone Number" name="wa"
                                         value="<?= isset($agentSosmed['wa']) ? $agentSosmed['wa'] : '' ?>" />
                                 </div>
@@ -432,7 +432,7 @@ if (strpos($page_location, $file_name) !== false) {
                                     </div>
 
                                     <input type="text" id="yt"
-                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full ps-16 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full ps-16 p-2.5 "
                                         placeholder="Username" name="yt"
                                         value="<?= isset($agentSosmed['yt']) ? $agentSosmed['yt'] : '' ?>" />
                                 </div>
