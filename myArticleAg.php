@@ -1,6 +1,7 @@
 <?php
 session_start();
 require __DIR__ . "/functions/function/selectData.php";
+require __DIR__ . "/includes/judulArtikel.php";
 $id_agent = $_SESSION['id_agent'];
 $agent = query("SELECT * FROM agent WHERE id_agent = '$id_agent'")[0];
 
@@ -96,13 +97,7 @@ if (strpos($page_location, $file_name) !== false) {
                                         <img class="w-full" src="assets/fotoUploads/<?= $value['foto'] ?>" alt="Sunset in the mountains">
                                         <div class="px-6 py-4">
                                             <div class="px-1 py-1 bg-purple-100 inline-block text-xs font-medium text-purple-950"><?= strtoupper($value['kategori']) ?></div>
-                                            <div class="font-bold text-lg mb-4"><?php
-                                                                                $artikel_judul = $value['judul'];
-                                                                                $maxLength = 40;
-                                                                                if (strlen($artikel_judul) > $maxLength) {
-                                                                                    $artikel_judul = substr($artikel_judul, 0, $maxLength) . '...';
-                                                                                }
-                                                                                echo $artikel_judul;
+                                            <div class="font-bold text-lg mb-4"><?= limitText(40, $value['judul'])
                                                                                 ?> </div>
                                             <div class="px-1 py-1 bg-purple-100 inline-block text-xs font-bold text-purple-900"><?= date('d F Y', strtotime($value['tgl_membuat'])) ?></div>
                                         </div>
