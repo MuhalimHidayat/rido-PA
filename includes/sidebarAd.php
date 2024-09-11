@@ -3,7 +3,7 @@
 
 ?>
 <!-- sidebar -->
-<div class="sidebar">
+<div class="sidebar" style="min-height: 100vh">
     <div class="logo">
         <p>SmartSkills <span class="text-bold" style="color: rgba(4, 171, 255, 1)">Admin</span></p>
     </div>
