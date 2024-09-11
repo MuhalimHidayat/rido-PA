@@ -125,7 +125,7 @@ if (strpos($page_location, $file_name) !== false) {
                         </div>
                     </div>
                 </div>
-                <footer class="pt-3 mt-8 relative bottom-0 ">
+                <footer class="pt-3 mt-8 absolute bottom-0 ">
                     <p class="text-sm text-slate-600">&copy;2024- Designed by <b>SmartSkills.</b> All rights reserved.</p>
                 </footer>
             </div>

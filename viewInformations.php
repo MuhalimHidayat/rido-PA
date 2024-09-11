@@ -22,6 +22,9 @@ $artikel = query("SELECT * FROM agent INNER JOIN artikel ON agent.id_agent = art
     <!-- <link rel="stylesheet" href="style/dist/ouput.css">
       -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+    <!-- CRISP fitur chat -->
+    <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="0eb411a1-2a62-4ced-8887-ff2a2541970e";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+
     <title>Informasi</title>
 </head>
 
