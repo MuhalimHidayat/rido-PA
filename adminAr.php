@@ -122,7 +122,9 @@ $artikel = query("SELECT * FROM artikel CROSS JOIN agent ON agent.id_agent = art
                 </div>
             </div>
 
-            <footer class="mt-8 mb-3">
+            <footer class="mt-8 mb-3" style="bottom: 0;
+    position: absolute;
+    left: 50%;">
                 <p class="text-center text-sm text-slate-600">&copy;2024- Designed by <b>SmartSkills.</b> All rights reserved.</p>
             </footer>
         </div>
