@@ -1,4 +1,11 @@
 <?php
+session_start();
+
+if (!isset($_SESSION['id_admin'])) {
+    header("Location: loginAd.php");
+    exit;
+}
+
 require 'functions/function/selectData.php';
 $page_location = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 $file_name = basename(__FILE__);
@@ -7,8 +14,7 @@ if (strpos($page_location, $file_name) !== false) {
 }
 
 $artikel = query("SELECT * FROM artikel CROSS JOIN agent ON agent.id_agent = artikel.id_agent");
-// var_dump($artikel);
-// exit;
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,6 +25,9 @@ $artikel = query("SELECT * FROM artikel CROSS JOIN agent ON agent.id_agent = art
     <link rel="stylesheet" href="style/admin.css">
     <link rel="stylesheet" href="style/includes/sidebarAd.css">
     <link rel="stylesheet" href="style/includes/upperContentAd.css">
+    <!-- cdn sweetalert2 -->
+    <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+
     <!-- cdn tailwind -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries">
     </script>
@@ -97,7 +106,7 @@ $artikel = query("SELECT * FROM artikel CROSS JOIN agent ON agent.id_agent = art
                                             <img src="assets/fotoUploads/<?= $value['foto'] ?>" alt="" style="height: 48px; width: 48px; object-fit: cover; object-position: center; border-radius: 100%">
                                         </td>
                                         <td class="px-6 py-4">
-                                            <?= $value['nama_agent'] ?>
+                                            <?= ($value['nama_agent'] == " ") ? $value['username'] : $value['nama_agent']?>
                                         </td>
                                         <td class="px-6 py-4">
                                             <?= $value['judul'] ?>
@@ -110,7 +119,7 @@ $artikel = query("SELECT * FROM artikel CROSS JOIN agent ON agent.id_agent = art
                                         </td>
 
                                         <td class="px-6 py-4">
-                                            <a href="functions/admin/deleteAr.php?id_artikel=<?= $value['id_artikel'] ?>" class="font-medium text-red-600 hover:text-red-500 hover:underline" onclick="return confirm('Menghapus Agent?')">Hapus</a>
+                                            <a class="font-medium text-red-600 hover:text-red-500 hover:underline" data-id="<?=$value['id_artikel']?>" style="cursor:pointer;" id="delete">Hapus</a>
                                         </td>
                                     </tr>
                                     <?php $i++; ?>
@@ -131,6 +140,32 @@ $artikel = query("SELECT * FROM artikel CROSS JOIN agent ON agent.id_agent = art
     </div>
 
     <script src="script/search.js"></script>
+    <script>
+        function deleteArticle(articleId) {
+            Swal.fire({
+                title: 'Hapus',
+                text: 'Apakah anda yakin ingin menghapus artikel ini?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Ya, Hapus!',
+                cancelButtonText: 'Batal'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = `functions/admin/deleteAr.php?id_artikel=${articleId}`;
+                }
+            });
+        }
+
+        const deleteButton = document.querySelectorAll('#delete');
+        deleteButton.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const articleId = this.getAttribute('data-id');
+                deleteArticle(articleId);
+            });
+        });
+    </script>
 </body>
 
 </html>

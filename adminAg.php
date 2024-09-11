@@ -1,4 +1,13 @@
 <?php
+session_start();
+
+if (!isset($_SESSION['id_admin'])) {
+    header("Location: loginAd.php");
+    exit;
+}
+
+
+
 require 'functions/function/selectData.php';
 $page_location = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 $file_name = basename(__FILE__);

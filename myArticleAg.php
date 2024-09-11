@@ -31,6 +31,8 @@ if (strpos($page_location, $file_name) !== false) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/myArticleAg.css">
     <link rel="stylesheet" href="style/includes/sidebar.css">
+    <!-- cdn sweetalert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- cdn tailwind -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries">
     </script>
@@ -81,12 +83,13 @@ if (strpos($page_location, $file_name) !== false) {
                     <div class="flex justify-center w-full">
                         <div class="flex justify-center flex-wrap gap-5" id="table-content">
                             <!-- jika array artikel sama dengan kosong -->
-                            <?php if (empty($artikel)) : ?>
+                            <?php if (empty($artikel)): ?>
                                 <div class="flex justify-center items-center flex-col gap-2">
                                     <img class="w-2/5" src="assets/empty_artikel.png" alt="empty-article">
                                     <p class="text-center text-lg font-semibold">Artikel Belum Tersedia :
                                     </p>
-                                    <p class="text-center text-md text-slate-700 ">Bagikan wawasan Anda tentang teknologi informasi<span style="display: block;">
+                                    <p class="text-center text-md text-slate-700 ">Bagikan wawasan Anda tentang teknologi
+                                        informasi<span style="display: block;">
                                             melalui artikel yang menarik dan informatif.</span></p>
                                 </div>
                             <?php endif; ?>
@@ -94,22 +97,34 @@ if (strpos($page_location, $file_name) !== false) {
                             <?php foreach ($artikel as $value): ?>
                                 <div class="relative" id="card">
                                     <div class="rounded overflow-hidden shadow-lg" style="max-width: 300px">
-                                        <img class="w-full" src="assets/fotoUploads/<?= $value['foto'] ?>" alt="Sunset in the mountains">
+                                        <img class="w-full" src="assets/fotoUploads/<?= $value['foto'] ?>"
+                                            alt="Sunset in the mountains">
                                         <div class="px-6 py-4">
-                                            <div class="px-1 py-1 bg-purple-100 inline-block text-xs font-medium text-purple-950"><?= strtoupper($value['kategori']) ?></div>
+                                            <div
+                                                class="px-1 py-1 bg-purple-100 inline-block text-xs font-medium text-purple-950">
+                                                <?= strtoupper($value['kategori']) ?>
+                                            </div>
                                             <div class="font-bold text-lg mb-4"><?= limitText(40, $value['judul'])
-                                                                                ?> </div>
-                                            <div class="px-1 py-1 bg-purple-100 inline-block text-xs font-bold text-purple-900"><?= date('d F Y', strtotime($value['tgl_membuat'])) ?></div>
+                                                ?> </div>
+                                            <div
+                                                class="px-1 py-1 bg-purple-100 inline-block text-xs font-bold text-purple-900">
+                                                <?= date('d F Y', strtotime($value['tgl_membuat'])) ?>
+                                            </div>
                                         </div>
-                                        <div class="flex justify-between items-center px-6 py-4 border-t border-gray-300 shadow-md">
+                                        <div
+                                            class="flex justify-between items-center px-6 py-4 border-t border-gray-300 shadow-md">
                                             <div class="font-bold text-lg">
                                                 <?= $value['nama_agent'] ?>
                                             </div>
                                             <img class="open-option" src="assets/icon/DotsThree.png" alt="">
-                                            <div class="option-card absolute flex flex-col bg-white border shadow-md font-medium">
-                                                <a href="detailArticle.php?id_artikel=<?= $value['id_artikel'] ?>">View Details</a>
-                                                <a href="createArticleAg.php?id_artikel=<?= $value['id_artikel'] ?>">Edit Article</a>
-                                                <a href="functions/article/delete.php?id_artikel=<?= $value['id_artikel'] ?>" onclick="return confirm('Do you really want to delete this article?')">Delete Article</a>
+                                            <div
+                                                class="option-card absolute flex flex-col bg-white border shadow-md font-medium">
+                                                <a href="detailArticle.php?id_artikel=<?= $value['id_artikel'] ?>">View
+                                                    Details</a>
+                                                <a href="createArticleAg.php?id_artikel=<?= $value['id_artikel'] ?>">Edit
+                                                    Article</a>
+                                                <a
+                                                    id="delete" data-id="<?= $value['id_artikel']?>" style="cursor:pointer">Delete Article</a>
                                             </div>
                                         </div>
                                     </div>
@@ -120,8 +135,9 @@ if (strpos($page_location, $file_name) !== false) {
                         </div>
                     </div>
                 </div>
-                <footer class="pt-3 mt-8 absolute bottom-0 ">
-                    <p class="text-sm text-slate-600">&copy;2024- Designed by <b>SmartSkills.</b> All rights reserved.</p>
+                <footer class="pt-3 mt-8 relative bottom-0 ">
+                    <p class="text-sm text-slate-600">&copy;2024- Designed by <b>SmartSkills.</b> All rights reserved.
+                    </p>
                 </footer>
             </div>
             <!-- endmain content -->
@@ -131,6 +147,32 @@ if (strpos($page_location, $file_name) !== false) {
     <!-- </div> -->
 
     <script src="script/search.js">
+    </script>
+    <script>
+        function deleteArticle(articleId) {
+            Swal.fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, delete it!"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    console.log('delete');
+                    window.location.href = `functions/article/delete.php?id_artikel=${articleId}`;
+                }
+            });
+        }
+
+        document.querySelectorAll('#delete').forEach(button => {
+            button.addEventListener('click', function (e) {
+                e.preventDefault();
+                const articleId = this.getAttribute('data-id');
+                deleteArticle(articleId);
+            });
+        });
     </script>
 
 </body>

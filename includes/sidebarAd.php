@@ -1,5 +1,5 @@
 <?php
-// $logout_path = "functions/function/logoutAg.php";
+$logout_path = "functions/admin/logoutAd.php";
 
 ?>
 <!-- sidebar -->
@@ -73,6 +73,12 @@
             </a>
 
         <?php endif; ?>
+        <!-- signout -->
+        <a href="<?= $logout_path ?>">
+            <div class="sidebar-item sidebar-item-color"><img src="assets/icon/SignOut.png" alt="">
+                <p>Sign Out</p>
+            </div>
+        </a>
     </div>
 
     <!-- <div><a href="<?= $logout_path ?>">
