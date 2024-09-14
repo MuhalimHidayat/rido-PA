@@ -28,9 +28,7 @@ $artikel = query("SELECT * FROM agent AS ar INNER JOIN artikel AS ag ON ar.id_ag
     <!-- cdn tailwind -->
     <!-- <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script> -->
     <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
-    <!-- CRISP fitur chat -->
-    <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="0eb411a1-2a62-4ced-8887-ff2a2541970e";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
-
+   
     <title>View Agent Profile</title>
 </head>
 
