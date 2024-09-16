@@ -134,7 +134,10 @@ $artikel = query("SELECT * FROM agent AS ag INNER JOIN artikel AS ar ON ar.id_ag
 
     </main>
     <section class="consultation-wa">
-        <a href="https://chat.whatsapp.com/F3ymGOcWVIkHQ4x6y8TMBF">
+        <div class="keterangan" id="keterangan-konsultasi">
+            konsultasi sekarang!
+        </div>
+        <a href="https://chat.whatsapp.com/F3ymGOcWVIkHQ4x6y8TMBF" id="icon-kunsultasi">
             <img src="assets/icon/wa-crisp.png" alt="WhatsApp" width="60" height="60">
         </a>
     </section>
@@ -145,5 +148,19 @@ $artikel = query("SELECT * FROM agent AS ag INNER JOIN artikel AS ar ON ar.id_ag
     <!--  -->
 
 </body>
+
+<script>
+    const ketKonsultasi = document.getElementById('keterangan-konsultasi');
+    const iconKonsultasi = document.getElementById('icon-kunsultasi');
+
+    ketKonsultasi.style.display="none";
+
+    iconKonsultasi.addEventListener('mouseover', function(){
+        ketKonsultasi.style.display="block";
+    });
+    iconKonsultasi.addEventListener('mouseout', function(){
+        ketKonsultasi.style.display="none";
+    });
+</script>
 
 </html>
