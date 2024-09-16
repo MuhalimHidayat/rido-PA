@@ -33,7 +33,10 @@ $artikel = query("SELECT * FROM agent AS ag INNER JOIN artikel AS ar ON ar.id_ag
 
     <!-- sweetalert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    
+
+    <!-- crisp -->
+    <!-- <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="f1b3b1b4-0b3b-4b3b-8b3b-3b3b3b3b3b3b";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script> -->
+
 </head>
 
 <body>
@@ -78,15 +81,17 @@ $artikel = query("SELECT * FROM agent AS ag INNER JOIN artikel AS ar ON ar.id_ag
                     <!-- card -->
                     <div class="relative" id="card">
                         <div class="rounded overflow-hidden shadow-lg" style="max-width: 300px">
-                            <img class="w-full" src="assets/fotoUploads/<?=$art['foto']?>" alt="Sunset in the mountains">
+                            <img class="w-full" src="assets/fotoUploads/<?= $art['foto'] ?>" alt="Sunset in the mountains">
                             <div class="px-6 py-4">
                                 <div class="px-1 py-1 bg-purple-100 inline-block text-xs font-medium text-purple-950">
-                                    <?= $art['kategori'] ?></div>
+                                    <?= $art['kategori'] ?>
+                                </div>
                                 <div class="font-bold text-lg mb-4">
                                     <?= limitText(40, $art['judul']) ?>
                                 </div>
                                 <div class="px-1 py-1 bg-purple-100 inline-block text-xs font-bold text-purple-900">
-                                    <?= $formatted_date = date('d F Y', strtotime($art['tgl_membuat'])) ?></div>
+                                    <?= $formatted_date = date('d F Y', strtotime($art['tgl_membuat'])) ?>
+                                </div>
                             </div>
                             <div class="flex justify-between items-center px-6 py-4 border-t border-gray-300 shadow-md">
                                 <div class="font-bold text-md">
@@ -125,7 +130,14 @@ $artikel = query("SELECT * FROM agent AS ag INNER JOIN artikel AS ar ON ar.id_ag
             </div>
         </section>
 
+
+
     </main>
+    <section class="consultation-wa">
+        <a href="https://chat.whatsapp.com/F3ymGOcWVIkHQ4x6y8TMBF">
+            <img src="assets/icon/wa-crisp.png" alt="WhatsApp" width="60" height="60">
+        </a>
+    </section>
 
     <?php
     include_once 'includes/footer.php';

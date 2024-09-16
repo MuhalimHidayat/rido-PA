@@ -98,3 +98,38 @@ body{
   background-color: rgba(4, 171, 255, 1);
   color: white;
 }
+
+.consultation-wa{
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+  /* margin-bottom: 70px; */
+  /* background-color: #2F327D; */
+}
+.consultation-wa a{
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  /* padding: 10px; */
+  color: white;
+  text-decoration: none;
+  position: fixed;
+  /* top: 50%; */
+  /* left: 50%; */
+  bottom: 20px;
+  right: 40px;
+}
+.consultation-wa img{
+  /* animated */
+  width: 70px;
+  height: 70px;
+  border-radius: 100%;
+  transform: rotate(15deg);
+  transition: 0.3s;
+}
+
+.consultation-wa img:hover{
+  transform: scale(1.1);
+  /* shadow */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
